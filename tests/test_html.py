@@ -1,4 +1,4 @@
-cat > tests/test_html.py <<'EOF'
+
 from pathlib import Path
 
 
@@ -14,4 +14,4 @@ def test_html_contains_title():
 def test_html_contains_heading():
     content = Path("index.html").read_text()
     assert "<h1>AI Self-Healing CI/CD Demo</h1>" in content
-EOF
+
