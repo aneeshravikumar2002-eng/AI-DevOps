@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - ai-self-healing
   pull_request:
 
 jobs:
@@ -22,7 +23,7 @@ jobs:
       - name: Install pytest
         run: pip install pytest
 
-      - name: Run tests
+      - name: Run HTML tests
         env:
           PYTHONPATH: .
         run: pytest -v
