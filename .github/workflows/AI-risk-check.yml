@@ -1,0 +1,30 @@
+name: AI Deployment Risk Advisor
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  ai-risk-analysis:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Generate AI deployment input
+        run: |
+          chmod +x scripts/generate_ai_input.sh
+          ./scripts/generate_ai_input.sh
+
+      - name: Upload AI input report
+        uses: actions/upload-artifact@v4
+        with:
+          name: ai-deployment-input
+          path: ai_deployment_input.txt
+
+      - name: Show AI input report
+        run: cat ai_deployment_input.txt
