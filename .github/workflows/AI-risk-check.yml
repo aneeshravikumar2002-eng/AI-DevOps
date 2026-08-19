@@ -17,8 +17,8 @@ jobs:
 
       - name: Generate AI deployment input
         run: |
-          chmod +x scripts/generate_ai_input.sh
-          ./scripts/generate_ai_input.sh
+          chmod +x scripts/AI_input.sh
+          ./scripts/AI_input.sh
 
       - name: Upload AI input report
         uses: actions/upload-artifact@v4
